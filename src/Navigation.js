@@ -38,7 +38,7 @@ function Navigation() {
           background: "darkblue",
         }}
       >
-        By Student
+        Student
       </NavLink>
       <NavLink
         to="/login"

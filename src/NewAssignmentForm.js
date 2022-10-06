@@ -16,6 +16,7 @@ const NewAssignmentForm = ({currDate}) => {
         type: '',
         reason: ''
     })
+    const [date, setDate] = useState('')
 
 
     useEffect(() => {
