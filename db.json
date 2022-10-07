@@ -588,34 +588,17 @@
     }
   ],
   "courses": [
-    {
-      "name": "English"
-    },
-    {
-      "name": "Math"
-    },
-    {
-      "name": "Science"
-    },
-    {
-      "name": "Social Studies"
-    },
-    {
-      "name": "World Language"
-    },
-    {
-      "name": "Arts"
-    },
-    {
-      "name": "Health & Wellness"
-    },
-    {
-      "name": "Discovery"
-    },
-    {
-      "name": "Other"
-    }
+    "English",
+    "Math",
+    "Science",
+    "Social Studies",
+    "World Language",
+    "Arts",
+    "Health & Wellness",
+    "Discovery",
+    "Other"
   ],
+  
   "teachers": [
     {
       "name": "(COLOR CLASS) Mr. Jung",

@@ -1,39 +1,37 @@
 import React, {useState, useEffect} from 'react'
 import NewAssignment from './NewAssignment'
 
-const Assignments = () => {
-    const [assignments, setAssignments] = useState([])
-    const [students, setStudents] = useState([])
-    const [selectedStudent, setSelectedStudent] = useState('')
+const Assignments = ({assignments}) => {
 
-    useEffect(() => {
-        fetch("http://localhost:3001/assignments")
-        .then(resp => resp.json())
-        .then(data => setAssignments(data))
-        }, [])
+    // const [students, setStudents] = useState([])
+    // const [selectedStudent, setSelectedStudent] = useState('')
 
-console.log(selectedStudent)
-    useEffect(() => {
-        fetch("http://localhost:3001/students")
-        .then(resp => resp.json())
-        .then(data => {
-            setStudents(data)
-            setSelectedStudent(students[0].name)
-        })
-    }, [])
+    // useEffect(() => {
+    //     fetch("http://localhost:3001/assignments")
+    //     .then(resp => resp.json())
+    //     .then(data => setAssignments(data))
+    //     }, [])
+
+    // useEffect(() => {
+    //     fetch("http://localhost:3001/students")
+    //     .then(resp => resp.json())
+    //     .then(data => {
+    //         setStudents(data)
+    //         setSelectedStudent(data[0].name)
+    //     })
+    // }, [])
     
-    const studentsList = students.map(student => <option key={student.name} value={student.name}>{student.name}</option>) 
+    // const studentsList = students.map(student => <option key={student.name} value={student.name}>{student.name}</option>) 
     const assignmentsList = assignments.map(assignment => <li key={assignment.id}>{assignment.missingAssignment}</li>) 
     
-    function handleChange(e) {
-        setSelectedStudent(e.target.value)
-        console.log(e.target.value)
-    }
+    // function handleChange(e) {
+    //     setSelectedStudent(e.target.value)
+    // }
 
     return (
         <div>
-            <h3>Assignments for</h3>
-            <form className="NewAssignment" >
+            <h3>Missed Assignments for All</h3>
+            {/* <form className="NewAssignment" >
           <label>
             Student Name:
             <select
@@ -44,12 +42,12 @@ console.log(selectedStudent)
                 {studentsList}
             </select>
           </label>
-          </form>
+          </form> */}
             <hr/>
             {assignmentsList}
+            {/* <br/>
             <br/>
-            <br/>
-            {<NewAssignment selectedStudent={selectedStudent}/>}
+            {<NewAssignment selectedStudent={selectedStudent}/>} */}
         </div>
     )
 }

@@ -13,17 +13,13 @@ const linkStyles = {
   color: "white",
 };
 
-/* define the NavBar component */
 function Navigation() {
   return (
     <div>
       <NavLink
         to="/"
-        /* set exact so it knows to only set activeStyle when route is deeply equal to link */
         exact
-        /* add styling to Navlink */
         style={linkStyles}
-        /* add prop for activeStyle */
         activestyle={{
           background: "darkblue",
         }}
@@ -38,17 +34,17 @@ function Navigation() {
           background: "darkblue",
         }}
       >
-        Student
+        Assignments
       </NavLink>
       <NavLink
-        to="/login"
+        to="/byStudent"
         exact
         style={linkStyles}
         activestyle={{
           background: "darkblue",
         }}
       >
-        Login
+        By Student
       </NavLink>
     </div>
   );
