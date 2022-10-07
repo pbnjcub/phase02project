@@ -19,6 +19,17 @@
       "type": "Major Project",
       "reason": "I didn't write it down in my planner",
       "id": 2
+    },
+    {
+      "name": {
+        "selected": "Akula, Krishna"
+      },
+      "classTeacher": "",
+      "class": "",
+      "missingAssignment": "Part 1 of the cell diagram",
+      "type": "",
+      "reason": "I had a busy weekend",
+      "id": 3
     }
   ],
   "students": [

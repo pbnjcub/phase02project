@@ -1,30 +1,22 @@
 import React, {useState, useEffect, useCallback} from 'react'
+import {useLocation} from 'react-router-dom'
 
-
-
-const NewAssignmentForm = ({currDate}) => {
-    const [students, setStudents] = useState([])
+const NewAssignmentForm = () => {
     const [courses, setCourses] = useState([])
     const [teachers, setTeachers] = useState([])
     const [types, setTypes] = useState([])
     const [newAssignment, setNewAssignment] = useState({
-        date: '',
         name: '',
-        classTeacher: '',
-        class: '',
+        classTeacher: teachers[0].name,
+        class: courses[0].name,
         missingAssignment: '',
-        type: '',
+        type: types[0],
         reason: ''
     })
-    const [date, setDate] = useState('')
 
-
-    useEffect(() => {
-        fetch("http://localhost:3001/students")
-        .then(resp => resp.json())
-        .then(data => setStudents(data))
-    }, [])
-
+    const location = useLocation()
+    const selected = location.state
+    
     useEffect(() => {
         fetch("http://localhost:3001/courses")
         .then(resp => resp.json())
@@ -43,9 +35,6 @@ const NewAssignmentForm = ({currDate}) => {
         .then(data => setTypes(data))
     }, [])
 
-    
-    const studentsList = students.map(student => <option key={student.name} value={student.name}>{student.name}</option>) 
-    
 
     const coursesList = courses.map(course => <option key={course.name} value={course.name}>{course.name}</option>) 
     
@@ -59,12 +48,12 @@ const NewAssignmentForm = ({currDate}) => {
             [e.target.name]: e.target.value,
         })
     }
+
     function handleSubmit(e) {
         e.preventDefault()
         console.log(e.target.class)
         const newAssignmentData = {
-            date: {currDate},
-            name: newAssignment.name,
+            name: {selected},
             classTeacher: newAssignment.classTeacher,
             class: newAssignment.class,
             missingAssignment: newAssignment.missingAssignment,
@@ -80,22 +69,14 @@ const NewAssignmentForm = ({currDate}) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
         })
     }
 
     return (
         <form className="NewAssignment" onSubmit={handleSubmit}>
           <label>
-            Student Name:
-            <select
-              name="name"
-              value={newAssignment.name}
-              onChange={handleChange}
-            >
-                {studentsList}
-            </select>
-          </label>
+            Student Name: {selected}
+            </label>
             <br/>
           <label>
             Course:
