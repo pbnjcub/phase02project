@@ -18,20 +18,22 @@ function Assignment({ assignment }) {
 
 
   return (
-    <li className={assignment.turnedIn ? "completed" : "not-completed"}>
-        <span className="student-name">{assignment.name}</span>
-        <span className="class">{assignment.class}</span>
-        <span className="class-teacher">{assignment.classTeacher}</span>
-        <span className="type">{assignment.type}</span>
-        <span className="missing-assignment">{assignment.missingAssignment}</span>
-        <span className="reason">{assignment.reason}</span>
-        <button
-            className={assignment.turnedIn ? "completed" : "not-completed"}
-            onClick={handleTurnIn}
-        >
-            {assignment.turnedIn ? "Completed" : "Turn In"}
-        </button>
-    </li>
+    <tr className={assignment.turnedIn ? "completed" : "not-completed"}>
+        <td className="student-name">{assignment.name}</td>
+        <td className="class">{assignment.class}</td>
+        <td className="class-teacher">{assignment.classTeacher}</td>
+        <td className="type">{assignment.type}</td>
+        <td className="missing-assignment">{assignment.missingAssignment}</td>
+        <td className="reason">{assignment.reason}</td>
+        <td>
+            <button
+                className={assignment.turnedIn ? "completed" : "not-completed"}
+                onClick={handleTurnIn}
+            >
+                {assignment.turnedIn ? "Completed" : "Turn In"}
+            </button>
+        </td>
+    </tr>
     
   );
 }

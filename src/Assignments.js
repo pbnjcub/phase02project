@@ -10,11 +10,24 @@ const Assignments = () => {
         <div>
             <h3>Missed Assignments for All</h3>
             <hr/>
-            <ul className="AllAssignments">
-                {allAssignments.map(assignment => (
-                    <Assignment key={assignment.id} assignment={assignment}/>
-                ))}
-            </ul>
+            <table className="AllAssignments">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Class</th>
+                        <th>Teacher</th>
+                        <th>Type</th>
+                        <th>Name of Assignment</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {allAssignments.map(assignment => (
+                        <Assignment key={assignment.id} assignment={assignment}/>
+                    ))}
+                </tbody>
+  
+            </table>
 
         </div>
     )

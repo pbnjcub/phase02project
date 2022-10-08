@@ -1,14 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { useLocation } from 'react-router-dom'
-import NewAssignment from './NewAssignment'
 import NewAssignmentForm from './NewAssignmentForm'
 import Assignment from './Assignment'
 
 const ByStudent = () => {
     const location = useLocation()
-    const allAssignments = location.state.assignments
+    const allAssignments = location.state
     // const onNewAssignments = location.state.onNewAssignments
-    // console.log(location.state.assignments)
 
     const [students, setStudents] = useState([])
     const [selectedStudent, setSelectedStudent] = useState('')
@@ -36,7 +34,7 @@ const ByStudent = () => {
 
     return (
         <div>
-            <h3>Assignments for</h3>
+            <h3>Assignments for: {selectedStudent}</h3>
             <form className="NewAssignment" >
           <label>
             Student Name:
@@ -50,11 +48,23 @@ const ByStudent = () => {
           </label>
           </form>
             <hr/>
-            <ul className="AllAssignments">
-                {filteredAssignmentsList.map(assignment => (
-                    <Assignment key={assignment.id} assignment={assignment}/>
-                ))}
-            </ul>
+            <table className="assignments-by-student">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Class</th>
+                        <th>Teacher</th>
+                        <th>Type</th>
+                        <th>Name of Assignment</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {filteredAssignmentsList.map(assignment => (
+                        <Assignment key={assignment.id} assignment={assignment}/>
+                    ))}
+                </tbody>
+            </table>
             <br/>
             <br/>
             {<NewAssignmentForm selectedStudent={selectedStudent} />}

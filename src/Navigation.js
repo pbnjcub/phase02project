@@ -1,6 +1,6 @@
 import React from "react";
 /* Add NavLink to import */
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /* Add basic styling for NavLinks */
 const linkStyles = {
@@ -17,7 +17,7 @@ function Navigation({assignments, onNewAssignments}) {
 
   return (
     <div>
-      <NavLink
+      <Link
         to="/"
         exact
         style={linkStyles}
@@ -26,8 +26,8 @@ function Navigation({assignments, onNewAssignments}) {
         }}
       >
         Home
-      </NavLink>
-      <NavLink 
+      </Link>
+      <Link 
         to="/assignments"
         state={assignments}
         exact
@@ -37,13 +37,10 @@ function Navigation({assignments, onNewAssignments}) {
         }}
       >
         Assignments
-      </NavLink>
-      <NavLink 
-        //to={byStudentProps}
+      </Link>
+      <Link 
         to="/byStudent"
-        // state={assignments}
-        state={{assignments: assignments}}
-        // state={{assignments: assignments, onNewAssignments: onNewAssignments}}
+        state={assignments}
         exact
         style={linkStyles}
         activestyle={{
@@ -51,7 +48,7 @@ function Navigation({assignments, onNewAssignments}) {
         }}
       >
         By Student
-      </NavLink>
+      </Link>
     </div>
   );
 }
