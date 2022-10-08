@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const NewAssignment = ({selectedStudent}) => {
-    console.log(selectedStudent)
+const NewAssignment = ({selectedStudent, onNewAssignments}) => {
+
     return (
-        <Link to='/assignments/new' state={selectedStudent}
+        <Link 
+            // to={newAssignmentProps}
+            to='/assignments/new' state={{selectedStudent: selectedStudent, onNewAssignments: onNewAssignments}}
         >
             <button>Click to submit a new assignment</button>
         </Link>

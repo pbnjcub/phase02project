@@ -1,9 +1,13 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import {useLocation} from 'react-router-dom'
 
-const NewAssignmentForm = () => {
-    const location = useLocation()
-    const selected = location.state
+const NewAssignmentForm = ({selectedStudent}) => {
+    // const location = useLocation()
+    // const selected = location.state.selectedStudent
+    // const setAssignments = location.state.onNewAssignments
+    // function setAssignments(data) {
+    //     const setNewAssignments = location.state.onNewAssignments
+
     
     const [courses, setCourses] = useState([])
     const [teachers, setTeachers] = useState([])
@@ -12,7 +16,7 @@ const NewAssignmentForm = () => {
     const [selectedTeacher, setSelectedTeacher] = useState('')
     const [selectedType, setSelectedType] = useState('')
     const [newAssignment, setNewAssignment] = useState({
-        name: selected,
+        name: selectedStudent,
         classTeacher: selectedTeacher,
         class: selectedCourse,
         missingAssignment: '',
@@ -62,12 +66,12 @@ const NewAssignmentForm = () => {
             [e.target.name]: e.target.value,
         })
     }
-    console.log(newAssignment)
+
     function handleSubmit(e) {
         e.preventDefault()
   
         const newAssignmentData = {
-            name: selected,
+            name: selectedStudent,
             classTeacher: newAssignment.classTeacher,
             class: newAssignment.class,
             missingAssignment: newAssignment.missingAssignment,
@@ -84,71 +88,73 @@ const NewAssignmentForm = () => {
             body: JSON.stringify(newAssignmentData)
         })
         .then(resp => resp.json())
-        .then(data => {
-        })
+        .then(data => console.log(data))
     }
 
     return (
+        <div>
+        <h3>Form to Submit a New Homework Trckr</h3>
         <form className="NewAssignment" onSubmit={handleSubmit}>
-          <label>
-            Student Name: {selected}
-            </label>
-            <br/>
-          <label>
-            Course:
-            <select
-              name="class"
-              value={newAssignment.class}
-              onChange={handleChange}
-            >
-                {coursesList}
-            </select>
-          </label>
-          <br/>
-          <label>
-            Teacher of Class:
-            <select
-              name="classTeacher"
-              value={newAssignment.classTeacher}
-              onChange={handleChange}
-            >
-                {teacherList}
-            </select>
-          </label>
-          <br/>
-          <label>
-            Type of Assignment:
-            <select
-              name="type"
-              value={newAssignment.type}
-              onChange={handleChange}
-            >
-                {typeList}
-            </select>
-          </label>
-          <br/>
-          <label>
-            Name of Assignment:
-            <input
-                type='text'
-                name='missingAssignment'
-                value={newAssignment.missingAssignment}
-                onChange={handleChange}
-            />
-          </label>
-          <br/>
-          <label>
-            Reason you did not complete this assignment:
-            <input
-                type='text'
-                name='reason'
-                value={newAssignment.reason}
-                onChange={handleChange}
-            />
-          </label>
-          <br/>
-          <button type="submit">Submit Trckr</button>
-        </form>
+                <label>
+                Student Name: {selectedStudent}
+                </label>
+                <br/>
+                <label>
+                Course:
+                    <select
+                        name="class"
+                        value={newAssignment.class}
+                        onChange={handleChange}
+                    >
+                        {coursesList}
+                    </select>
+                </label>
+                <br/>
+                <label>
+                Teacher of Class:
+                <select
+                    name="classTeacher"
+                    value={newAssignment.classTeacher}
+                    onChange={handleChange}
+                >
+                    {teacherList}
+                </select>
+                </label>
+                <br/>
+                <label>
+                Type of Assignment:
+                        <select
+                            name="type"
+                            value={newAssignment.type}
+                            onChange={handleChange}
+                        >
+                        {typeList}
+                    </select>
+                </label>
+                <br/>
+                <label>
+                Name of Assignment:
+                    <input
+                        type='text'
+                        name='missingAssignment'
+                        value={newAssignment.missingAssignment}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br/>
+                <label>
+                Reason you did not complete this assignment:
+                    <input
+                        type='text'
+                        name='reason'
+                        value={newAssignment.reason}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br/>
+                <button type="submit">Submit Trckr</button>
+            </form>
+        </div>
       );
     }
 

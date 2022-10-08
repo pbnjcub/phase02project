@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import { useLocation } from 'react-router-dom'
 import NewAssignment from './NewAssignment'
+import NewAssignmentForm from './NewAssignmentForm'
 import Assignment from './Assignment'
 
 const ByStudent = () => {
     const location = useLocation()
-    const allAssignments = location.state
-    console.log(allAssignments)
+    const allAssignments = location.state.assignments
+    // const onNewAssignments = location.state.onNewAssignments
+    // console.log(location.state.assignments)
 
     const [students, setStudents] = useState([])
     const [selectedStudent, setSelectedStudent] = useState('')
@@ -55,7 +57,7 @@ const ByStudent = () => {
             </ul>
             <br/>
             <br/>
-            {<NewAssignment selectedStudent={selectedStudent}/>}
+            {<NewAssignmentForm selectedStudent={selectedStudent} />}
         </div>
     )
 }

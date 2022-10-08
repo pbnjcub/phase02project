@@ -16,10 +16,14 @@ const App = () => {
         .then(data => setAssignments(data))
         }, [])
 
+    function handleNewAssignments(updatedAssignments) {
+        setAssignments(updatedAssignments)
+    }
+
     return (
         <Router>
             <div className="App">
-                <Navigation assignments={assignments} />
+                <Navigation assignments={assignments} onNewAssignments={handleNewAssignments} />
                 <Routes>
                     <Route exact path="/" element={<Home />}/>
                     <Route exact path="/assignments" element={<Assignments />}/>

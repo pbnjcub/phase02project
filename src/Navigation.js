@@ -13,7 +13,8 @@ const linkStyles = {
   color: "white",
 };
 
-function Navigation({assignments}) {
+function Navigation({assignments, onNewAssignments}) {
+
   return (
     <div>
       <NavLink
@@ -37,9 +38,12 @@ function Navigation({assignments}) {
       >
         Assignments
       </NavLink>
-      <NavLink
+      <NavLink 
+        //to={byStudentProps}
         to="/byStudent"
-        state={assignments}
+        // state={assignments}
+        state={{assignments: assignments}}
+        // state={{assignments: assignments, onNewAssignments: onNewAssignments}}
         exact
         style={linkStyles}
         activestyle={{
