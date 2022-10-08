@@ -19,10 +19,10 @@ const App = () => {
     return (
         <Router>
             <div className="App">
-                <Navigation />
+                <Navigation assignments={assignments} />
                 <Routes>
                     <Route exact path="/" element={<Home />}/>
-                    <Route exact path="/assignments" element={<Assignments authed={true} />}/>
+                    <Route exact path="/assignments" element={<Assignments />}/>
                     <Route exact path="/byStudent" element={<ByStudent />}/>
                     <Route path="/assignments/new" element={<NewAssignmentForm/>}/>
                     {/* <Route exact path="/class" element={<Class />}/>

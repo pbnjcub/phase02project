@@ -13,7 +13,7 @@ const linkStyles = {
   color: "white",
 };
 
-function Navigation() {
+function Navigation({assignments}) {
   return (
     <div>
       <NavLink
@@ -26,8 +26,9 @@ function Navigation() {
       >
         Home
       </NavLink>
-      <NavLink
+      <NavLink 
         to="/assignments"
+        state={assignments}
         exact
         style={linkStyles}
         activestyle={{
@@ -38,6 +39,7 @@ function Navigation() {
       </NavLink>
       <NavLink
         to="/byStudent"
+        state={assignments}
         exact
         style={linkStyles}
         activestyle={{

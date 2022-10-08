@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import {useLocation} from 'react-router-dom'
 
-const NewAssignmentForm = ({setSelected}) => {
+const NewAssignmentForm = () => {
     const location = useLocation()
     const selected = location.state
     
@@ -17,7 +17,8 @@ const NewAssignmentForm = ({setSelected}) => {
         class: selectedCourse,
         missingAssignment: '',
         type: selectedType,
-        reason: ''
+        reason: '',
+        turnedIn: false
     })
 
     
@@ -72,6 +73,7 @@ const NewAssignmentForm = ({setSelected}) => {
             missingAssignment: newAssignment.missingAssignment,
             type: newAssignment.type,
             reason: newAssignment.reason,
+            turnedIn: newAssignment.turnedIn,
         }
 
         fetch("http://localhost:3001/assignments", {

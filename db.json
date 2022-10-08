@@ -8,7 +8,8 @@
       "missingAssignment": "How deep is the ocean?",
       "type": "Major Project",
       "reason": "I did not plan my time well",
-      "id": 1
+      "id": 1,
+      "turnedIn": true
     },
     {
       "date": {},
@@ -21,9 +22,7 @@
       "id": 2
     },
     {
-      "name": {
-        "selected": "Akula, Krishna"
-      },
+      "name": "Akula, Krishna",
       "classTeacher": "",
       "class": "",
       "missingAssignment": "Part 1 of the cell diagram",
@@ -598,7 +597,6 @@
     "Discovery",
     "Other"
   ],
-  
   "teachers": [
     {
       "name": "(COLOR CLASS) Mr. Jung",
