@@ -1,15 +1,12 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
 import Assignment from './Assignment'
 
 const Assignments = ({assignments}) => {
-
-
     return (
         <div>
             <h3>Missed Assignments for All</h3>
             <hr/>
-            <table className="AllAssignments">
+            <table className="all-assignments">
                 <thead>
                     <tr>
                         <th>Student Name</th>

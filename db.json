@@ -160,6 +160,36 @@
       "reason": "i didn't show much research on it",
       "turnedIn": false,
       "id": 16
+    },
+    {
+      "name": "Burdier, Angel",
+      "classTeacher": "",
+      "class": "",
+      "missingAssignment": "problem set 7",
+      "type": "",
+      "reason": "did not show enough work.",
+      "turnedIn": false,
+      "id": 17
+    },
+    {
+      "name": "Akula, Krishna",
+      "classTeacher": "",
+      "class": "",
+      "missingAssignment": "test",
+      "type": "",
+      "reason": "test",
+      "turnedIn": false,
+      "id": 18
+    },
+    {
+      "name": "Akula, Krishna",
+      "classTeacher": "(COLOR CLASS) Mr. Jung",
+      "class": "English",
+      "missingAssignment": "journal entry",
+      "type": "Homework",
+      "reason": "only wrote 2 paragraphs",
+      "turnedIn": false,
+      "id": 19
     }
   ],
   "students": [

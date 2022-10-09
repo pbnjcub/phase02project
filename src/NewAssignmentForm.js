@@ -1,13 +1,13 @@
 import React, {useState, useEffect, useCallback} from 'react'
 
-const NewAssignmentForm = ({selectedStudent, onNewAssignment}) => {
+const NewAssignmentForm = ({selectedStudent, onNewAssignment, assignments}) => {
    
     const [courses, setCourses] = useState([])
     const [teachers, setTeachers] = useState([])
     const [types, setTypes] = useState([])
-    const [selectedCourse, setSelectedCourse] = useState('')
-    const [selectedTeacher, setSelectedTeacher] = useState('')
-    const [selectedType, setSelectedType] = useState('')
+    const [selectedCourse, setSelectedCourse] = useState('English')
+    const [selectedTeacher, setSelectedTeacher] = useState('(COLOR CLASS) Mr. Jung')
+    const [selectedType, setSelectedType] = useState('Homework')
     const [newAssignment, setNewAssignment] = useState({
         name: selectedStudent,
         classTeacher: selectedTeacher,
@@ -24,7 +24,7 @@ const NewAssignmentForm = ({selectedStudent, onNewAssignment}) => {
         .then(resp => resp.json())
         .then(data => {
             setCourses(data)
-            setSelectedCourse(data[0])
+            // setSelectedCourse(data[0])
         })
     }, [])
 
@@ -33,7 +33,7 @@ const NewAssignmentForm = ({selectedStudent, onNewAssignment}) => {
         .then(resp => resp.json())
         .then(data => {
             setTeachers(data)
-            setSelectedTeacher(data[0].name)
+            // setSelectedTeacher(data[0].name)
         })
     }, [])
 
@@ -42,7 +42,7 @@ const NewAssignmentForm = ({selectedStudent, onNewAssignment}) => {
         .then(resp => resp.json())
         .then(data => {
             setTypes(data)
-            setSelectedType(data[0])
+            // setSelectedType(data[0])
         })
     }, [])
 
@@ -96,7 +96,7 @@ const NewAssignmentForm = ({selectedStudent, onNewAssignment}) => {
                 Course:
                     <select
                         name="class"
-                        value={newAssignment.class}
+                        value={selectedCourse}
                         onChange={handleChange}
                     >
                         {coursesList}
@@ -107,7 +107,7 @@ const NewAssignmentForm = ({selectedStudent, onNewAssignment}) => {
                 Teacher of Class:
                 <select
                     name="classTeacher"
-                    value={newAssignment.classTeacher}
+                    value={selectedTeacher}
                     onChange={handleChange}
                 >
                     {teacherList}
@@ -118,7 +118,7 @@ const NewAssignmentForm = ({selectedStudent, onNewAssignment}) => {
                 Type of Assignment:
                         <select
                             name="type"
-                            value={newAssignment.type}
+                            value={selectedType}
                             onChange={handleChange}
                         >
                         {typeList}

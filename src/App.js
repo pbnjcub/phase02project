@@ -35,10 +35,10 @@ const App = () => {
     return (
         <Router>
             <div className="App">
-                <Navigation assignments={assignments}  />
+                <Navigation />
                 <Routes>
                     <Route exact path="/" element={<Home />}/>
-                    <Route exact path="/assignments" element={<Assignments />}/>
+                    <Route exact path="/assignments" element={<Assignments assignments={assignments}/>}/>
                     <Route exact path="/byStudent" element={<ByStudent students={students} assignments={assignments} selectedStudent={selectedStudent} setSelectedStudent={setSelectedStudent} onNewAssignment={handleNewAssignments}/>}/>
                     <Route exact path="/byStudent/:name" element={<ByStudentDetail  />}/>
                     <Route path="/assignments/new" element={<NewAssignmentForm  />}/>

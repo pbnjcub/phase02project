@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import NewAssignmentForm from './NewAssignmentForm'
 import ByStudentDetail from './ByStudentDetail'
 
@@ -42,7 +42,7 @@ const ByStudent = ({students, selectedStudent, setSelectedStudent, onNewAssignme
             <ByStudentDetail selectedStudent={selectedStudent} assignments={assignments} />
             <br/>
             <br/>
-            {<NewAssignmentForm selectedStudent={selectedStudent} onNewAssignment={onNewAssignment} />}
+            {<NewAssignmentForm selectedStudent={selectedStudent} assignments={assignments} onNewAssignment={onNewAssignment} />}
         </div>
     )
 }
