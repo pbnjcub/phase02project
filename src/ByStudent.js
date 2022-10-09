@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import NewAssignmentForm from './NewAssignmentForm'
-import Assignment from './Assignment'
+import ByStudentDetail from './ByStudentDetail'
 
 const ByStudent = () => {
     const location = useLocation()
     const allAssignments = location.state
     // const onNewAssignments = location.state.onNewAssignments
-
+    // console.log(onNewAssignments)
     const [students, setStudents] = useState([])
     const [selectedStudent, setSelectedStudent] = useState('')
     // const [filteredByName, setFilteredByName] = useState([])
@@ -21,50 +21,42 @@ const ByStudent = () => {
         })
     }, [])
     
-    const studentsList = students.map(student => <option key={student.name} value={student.name}>{student.name}</option>) 
-    const filteredAssignmentsList = allAssignments.filter(assignment => {
-        if(assignment.name === selectedStudent) {
-            return assignment
-        }
-    }) 
+    const studentsList = students.map(student => <option key={student.name} value={student.name}><Link to={`/byStudent/${student.name}`}>{student.name}</Link></option>) 
     
     function handleChange(e) {
         setSelectedStudent(e.target.value)
     }
 
+    function handleQRSubmit(e) {
+        e.preventDefault()
+    }
+
+    
+
     return (
+        
         <div>
             <h3>Assignments for: {selectedStudent}</h3>
-            <form className="NewAssignment" >
+            <form className="NewAssignment" onSubmit="handleQRSubmit">
           <label>
             Student Name:
             <select
-              name="name"
-              value={selectedStudent}
-              onChange={handleChange}
-            >
-                {studentsList}
-            </select>
+                name="name"
+                value={selectedStudent}
+                onChange={handleChange}
+                >
+                    {studentsList}
+            </select>           
           </label>
+          <br/>
+          <label>
+            Download Missed Assignments: 
+            <button type="submit">Get QR Code</button>
+          </label>
+          
           </form>
             <hr/>
-            <table className="assignments-by-student">
-                <thead>
-                    <tr>
-                        <th>Student Name</th>
-                        <th>Class</th>
-                        <th>Teacher</th>
-                        <th>Type</th>
-                        <th>Name of Assignment</th>
-                        <th>Reason</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredAssignmentsList.map(assignment => (
-                        <Assignment key={assignment.id} assignment={assignment}/>
-                    ))}
-                </tbody>
-            </table>
+            <ByStudentDetail selectedStudent={selectedStudent} allAssignments={allAssignments} />
             <br/>
             <br/>
             {<NewAssignmentForm selectedStudent={selectedStudent} />}

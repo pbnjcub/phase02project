@@ -4,6 +4,7 @@ import Assignments from './Assignments'
 import Navigation from './Navigation'
 import Home from './Home';
 import ByStudent from './ByStudent'
+import ByStudentDetail from './ByStudentDetail'
 import NewAssignmentForm from './NewAssignmentForm'
 import './App.css';
 
@@ -28,6 +29,7 @@ const App = () => {
                     <Route exact path="/" element={<Home />}/>
                     <Route exact path="/assignments" element={<Assignments />}/>
                     <Route exact path="/byStudent" element={<ByStudent />}/>
+                    <Route exact path="/byStudent/:studentName" element={<ByStudentDetail/>} />
                     <Route path="/assignments/new" element={<NewAssignmentForm/>}/>
                     {/* <Route exact path="/class" element={<Class />}/>
                     <Route exact path="/teacher" element={<Teacher />}/> */}
