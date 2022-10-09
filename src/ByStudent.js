@@ -3,24 +3,8 @@ import { useLocation, Link } from 'react-router-dom'
 import NewAssignmentForm from './NewAssignmentForm'
 import ByStudentDetail from './ByStudentDetail'
 
-const ByStudent = () => {
-    const location = useLocation()
-    const allAssignments = location.state
-    // const onNewAssignments = location.state.onNewAssignments
-    // console.log(onNewAssignments)
-    const [students, setStudents] = useState([])
-    const [selectedStudent, setSelectedStudent] = useState('')
-    // const [filteredByName, setFilteredByName] = useState([])
+const ByStudent = ({students, selectedStudent, setSelectedStudent, onNewAssignment, assignments}) => {
 
-    useEffect(() => {
-        fetch("http://localhost:3001/students")
-        .then(resp => resp.json())
-        .then(data => {
-            setStudents(data)
-            setSelectedStudent(data[0].name)
-        })
-    }, [])
-    
     const studentsList = students.map(student => <option key={student.name} value={student.name}><Link to={`/byStudent/${student.name}`}>{student.name}</Link></option>) 
     
     function handleChange(e) {
@@ -31,11 +15,10 @@ const ByStudent = () => {
         e.preventDefault()
     }
 
-    
-
     return (
-        
+
         <div>
+
             <h3>Assignments for: {selectedStudent}</h3>
             <form className="NewAssignment" onSubmit="handleQRSubmit">
           <label>
@@ -56,10 +39,10 @@ const ByStudent = () => {
           
           </form>
             <hr/>
-            <ByStudentDetail selectedStudent={selectedStudent} allAssignments={allAssignments} />
+            <ByStudentDetail selectedStudent={selectedStudent} assignments={assignments} />
             <br/>
             <br/>
-            {<NewAssignmentForm selectedStudent={selectedStudent} />}
+            {<NewAssignmentForm selectedStudent={selectedStudent} onNewAssignment={onNewAssignment} />}
         </div>
     )
 }

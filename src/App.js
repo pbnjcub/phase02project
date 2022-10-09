@@ -10,27 +10,38 @@ import './App.css';
 
 const App = () => {
     const [assignments, setAssignments] = useState([])
+    const [students, setStudents] = useState([])
+    const [selectedStudent, setSelectedStudent] = useState('')
 
     useEffect(() => {
         fetch("http://localhost:3001/assignments")
         .then(resp => resp.json())
         .then(data => setAssignments(data))
         }, [])
+    
+    useEffect(() => {
+        fetch("http://localhost:3001/students")
+        .then(resp => resp.json())
+        .then(data => {
+            setStudents(data)
+            setSelectedStudent(data[0].name)
+        })
+    }, [])        
 
     function handleNewAssignments(updatedAssignments) {
-        setAssignments(updatedAssignments)
+        setAssignments([...assignments, updatedAssignments])
     }
 
     return (
         <Router>
             <div className="App">
-                <Navigation assignments={assignments} onNewAssignments={handleNewAssignments} />
+                <Navigation assignments={assignments}  />
                 <Routes>
                     <Route exact path="/" element={<Home />}/>
                     <Route exact path="/assignments" element={<Assignments />}/>
-                    <Route exact path="/byStudent" element={<ByStudent />}/>
-                    <Route exact path="/byStudent/:studentName" element={<ByStudentDetail/>} />
-                    <Route path="/assignments/new" element={<NewAssignmentForm/>}/>
+                    <Route exact path="/byStudent" element={<ByStudent students={students} assignments={assignments} selectedStudent={selectedStudent} setSelectedStudent={setSelectedStudent} onNewAssignment={handleNewAssignments}/>}/>
+                    <Route exact path="/byStudent/:name" element={<ByStudentDetail  />}/>
+                    <Route path="/assignments/new" element={<NewAssignmentForm  />}/>
                     {/* <Route exact path="/class" element={<Class />}/>
                     <Route exact path="/teacher" element={<Teacher />}/> */}
                 </Routes>

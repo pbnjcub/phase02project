@@ -70,6 +70,96 @@
       "reason": "I didn't understand",
       "turnedIn": false,
       "id": 7
+    },
+    {
+      "name": "Akula, Krishna",
+      "classTeacher": "",
+      "class": "Math",
+      "missingAssignment": "unit 4 corrections",
+      "type": "Correction/Revision",
+      "reason": "I did not write the hw down in my planner",
+      "turnedIn": false,
+      "id": 8
+    },
+    {
+      "name": "Akula, Krishna",
+      "classTeacher": "(COLOR CLASS) Mrs. Kaufman",
+      "class": "Science",
+      "missingAssignment": "cell project research",
+      "type": "",
+      "reason": "I didn't understand",
+      "turnedIn": false,
+      "id": 9
+    },
+    {
+      "name": "Akula, Krishna",
+      "classTeacher": "(COLOR CLASS) Mrs. Kaufman",
+      "class": "Science",
+      "missingAssignment": "cell project research",
+      "type": "",
+      "reason": "I didn't understand",
+      "turnedIn": false,
+      "id": 10
+    },
+    {
+      "name": "Appalaneni, Vaibhav",
+      "classTeacher": "(COLOR CLASS) Mrs. Lynch",
+      "class": "",
+      "missingAssignment": "did not complete annotations",
+      "type": "Reading Assignment",
+      "reason": "I did not plan my time well",
+      "turnedIn": false,
+      "id": 11
+    },
+    {
+      "name": "Alberaqdar, Zaina",
+      "classTeacher": "(COLOR CLASS) Ms. Roth",
+      "class": "Science",
+      "missingAssignment": "cell diagram incomplete",
+      "type": "",
+      "reason": "I didn't show much work on it.",
+      "turnedIn": false,
+      "id": 12
+    },
+    {
+      "name": "Burleson, Mia",
+      "classTeacher": "",
+      "class": "Math",
+      "missingAssignment": "Aleks Assignment",
+      "type": "",
+      "reason": "Did not upload my written work.",
+      "turnedIn": false,
+      "id": 13
+    },
+    {
+      "name": "Burleson, Mia",
+      "classTeacher": "(COLOR CLASS) Mrs. Patel",
+      "class": "",
+      "missingAssignment": "Outsiders",
+      "type": "Classroom Materials",
+      "reason": "Forgot to bring the book in.",
+      "turnedIn": false,
+      "id": 14
+    },
+    {
+      "name": "Akula, Krishna",
+      "classTeacher": "",
+      "class": "",
+      "missingAssignment": "test",
+      "type": "",
+      "reason": "test",
+      "turnedIn": false,
+      "id": 15
+    },
+    {
+      "name": "Akula, Krishna",
+      "classTeacher": "(COLOR CLASS) Mrs. Kaufman",
+      "class": "Science",
+      "missingAssignment": "cell project",
+      "type": "",
+      "reason": "i didn't show much research on it",
+      "turnedIn": false,
+      "id": 16
     }
   ],
   "students": [

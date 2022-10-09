@@ -2,9 +2,8 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Assignment from './Assignment'
 
-const Assignments = () => {
-    const location = useLocation()
-    const allAssignments = location.state
+const Assignments = ({assignments}) => {
+
 
     return (
         <div>
@@ -22,7 +21,7 @@ const Assignments = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {allAssignments.map(assignment => (
+                    {assignments.map(assignment => (
                         <Assignment key={assignment.id} assignment={assignment}/>
                     ))}
                 </tbody>

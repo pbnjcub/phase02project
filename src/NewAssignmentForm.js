@@ -1,14 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react'
-import {useLocation} from 'react-router-dom'
 
-const NewAssignmentForm = ({selectedStudent}) => {
-    // const location = useLocation()
-    // const selected = location.state.selectedStudent
-    // const setAssignments = location.state.onNewAssignments
-    // function setAssignments(data) {
-    //     const setNewAssignments = location.state.onNewAssignments
-
-    
+const NewAssignmentForm = ({selectedStudent, onNewAssignment}) => {
+   
     const [courses, setCourses] = useState([])
     const [teachers, setTeachers] = useState([])
     const [types, setTypes] = useState([])
@@ -88,7 +81,7 @@ const NewAssignmentForm = ({selectedStudent}) => {
             body: JSON.stringify(newAssignmentData)
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => onNewAssignment(data))
     }
 
     return (

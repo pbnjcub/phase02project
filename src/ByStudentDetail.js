@@ -1,12 +1,11 @@
 import React from 'react'
 import Assignment from './Assignment'
+import {useParams} from 'react-router-dom'
 
-const ByStudentDetail = ({selectedStudent, allAssignments, match, location}) => {
+const ByStudentDetail = ({selectedStudent, assignments}) => {
 
-    const filteredAssignmentsList = allAssignments.filter(assignment => {
-        const {
-            params: {studentName}
-        } = match
+    const filteredAssignmentsList = assignments.filter(assignment => {
+        
 
         if(assignment.name === selectedStudent) {
             return assignment
@@ -22,7 +21,6 @@ const ByStudentDetail = ({selectedStudent, allAssignments, match, location}) => 
     return (
         
             <table className="assignments-by-student">
-                <code>{JSON.stringify(match, null, 2)}</code>
                 <thead>
                     <tr>
                         <th>Student Name</th>
