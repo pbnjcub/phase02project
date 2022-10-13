@@ -11,16 +11,13 @@ const ByStudent = ({students, selectedStudent, setSelectedStudent, onNewAssignme
         setSelectedStudent(e.target.value)
     }
 
-    function handleQRSubmit(e) {
-        e.preventDefault()
-    }
 
     return (
 
         <div>
 
             <h3>Assignments for: {selectedStudent}</h3>
-            <form className="NewAssignment" onSubmit="handleQRSubmit">
+            <form className="NewAssignment" >
           <label>
             Student Name:
             <select
@@ -32,10 +29,6 @@ const ByStudent = ({students, selectedStudent, setSelectedStudent, onNewAssignme
             </select>           
           </label>
           <br/>
-          <label>
-            Download Missed Assignments: 
-            <button type="submit">Get QR Code</button>
-          </label>
           
           </form>
             <hr/>

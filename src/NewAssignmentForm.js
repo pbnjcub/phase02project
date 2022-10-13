@@ -96,7 +96,7 @@ const NewAssignmentForm = ({selectedStudent, onNewAssignment, assignments}) => {
                 Course:
                     <select
                         name="class"
-                        value={selectedCourse}
+                        value={newAssignment.class}
                         onChange={handleChange}
                     >
                         {coursesList}
@@ -107,7 +107,7 @@ const NewAssignmentForm = ({selectedStudent, onNewAssignment, assignments}) => {
                 Teacher of Class:
                 <select
                     name="classTeacher"
-                    value={selectedTeacher}
+                    value={newAssignment.classTeacher}
                     onChange={handleChange}
                 >
                     {teacherList}
@@ -118,7 +118,7 @@ const NewAssignmentForm = ({selectedStudent, onNewAssignment, assignments}) => {
                 Type of Assignment:
                         <select
                             name="type"
-                            value={selectedType}
+                            value={newAssignment.type}
                             onChange={handleChange}
                         >
                         {typeList}

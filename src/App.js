@@ -8,10 +8,12 @@ import ByStudentDetail from './ByStudentDetail'
 import NewAssignmentForm from './NewAssignmentForm'
 import './App.css';
 
+
 const App = () => {
     const [assignments, setAssignments] = useState([])
     const [students, setStudents] = useState([])
     const [selectedStudent, setSelectedStudent] = useState('')
+
 
     useEffect(() => {
         fetch("http://localhost:3001/assignments")

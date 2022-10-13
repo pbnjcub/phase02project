@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "flatironphase02project",
+  "private_key_id": "ead02e24d8c09dae521cfe274f0b81853386a4ee",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCma5+aKuWKvKXM\n+FXzdPAVN7Nr9h77e8dkTxDfouTok5nd/Km5Ph50xhgsuhzAb51VZFbuPqvlTsB/\nI0zw/l9nPL6gdmm7foa1KHnFpTR1RrCMoY0+1oyvJTOd6fU1FmI8YCtzwt9/p64s\n0+yhqkygHPx/zt0Ku6YrrNs7ywoJ4xgCOCfCk1P4Uk4C9XrtcGZrQ+g4qm/KrWcW\nVkHDl2pn8gj7ypHimbMOZtyr04+T0MaS+VVmyOM1XOSCFTovGjhZG7ctr3mjMxuh\nrW4BGNW1Tec/b8x0zpXMpRo7DKb1JYvIFJ2gkTVEupc8q8lt7SG9f1sjKwfryHoZ\npOaFdBHXAgMBAAECggEAMBJ4mPz5L3lM34eAtIG79DUR1AbVbkmUEEqykhcoznIM\niU457LOf8pViWFEuivvy077XSZy65NM50b/tstOX1Wd7nTh3VFy5Js1ZV5lgLNxN\nlWH5PgSVwOYbIet6FGqx18Tj6F2LWAGk03goK47Y8YtN+NFVkosf9g/JiF0fOjly\ngGHFYHtPJ0lmc5kk//92o3KOFNmisXarkXorzAoH1Jf+WThmCEHJxPd/FcwS94W+\nG9ZkJIgIS63bSWd+W+4s5SW/m3pOsl+n5JSUkgI+U1+PsrTB2OWjHP8oN730Cm94\nQdE4VASIPF+pwCTWCTcfSWRMwdlQUANofLAgl2EqsQKBgQDgzzAihbseTfk0J1ui\n3TB/KtUtt2HWsmV5wlBYf8KskGYADph28h+D5trkC7Woz3f8cesSTh8lcGby3i/V\nr/NnYOMC80CAVe4kSQWh0Jh9zm0xG9wxbvigqN1vooSdNrL6WZTGGiiUvsX0KoqR\nDaAWa/R8QAvb9UVRl0khCxIJzwKBgQC9gpGXUiycPcQcQ9AkuOZOZCg6IK46XciA\nWJVzseitCclcjHGM/sltaq8P6GFlmkt89dELcASW+fRZQwkHQFS99znDGas+GLqE\nJ+0q4bFpvl1x29h0xYBUw67uKDVxm3UIjM+f2TXtOc9kvzM3dLfeE+y4NcIzSbHf\nas6W8+pheQKBgG5Om0LFNZxYDChAC6GtQKeVP8bPzW0IWexVoRDbl40OyU3L25m5\nkicpdkwhRsCPFEPFLd/sfzHiplETHouOazNVge4np4WRJGmffuj4LmrEiCVpkzCa\nT9qdIRIuvz1Y4pcer3ZIzZK2zPDSku07r0pxLCRvVKJYBexT/Cj/gplXAoGBAKBQ\nI/luem5xkcSXWSy3fZwy/hSuMLUPQN3SEhudFMfMz5qK9EPiBWOaLB245yucKt+6\n0uxqBnfxWtNn8etAcG+DBEoXHNWa9a12WRs9cWeSslnvMF0X9ke+gezV9t/0MjzZ\nYYpHpWbY0KjZVepDwocLM+VhFLduUBo/sCPikxOBAoGBAK1nRB4Sy2DkD1G4bdnZ\nn3/i5WUQuaarjlksqBDEMWzSc1AyJsOSAjAeZnVg+Zzz95woOrUSWEP2nGsIFUsp\nr9MSJ4jwwftuPMTxn3m94BkAwRzoBxqSBtv/uvjsYNoJQkAFbXES4BPmDALA/D8n\nJU5JSLMMSNXAzpAuxV2OItSf\n-----END PRIVATE KEY-----\n",
+  "client_email": "jungpphase02proj@flatironphase02project.iam.gserviceaccount.com",
+  "client_id": "106639433143022783643",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jungpphase02proj%40flatironphase02project.iam.gserviceaccount.com"
+}
