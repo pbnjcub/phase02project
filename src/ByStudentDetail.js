@@ -4,11 +4,12 @@ import Assignment from './Assignment'
 
 const ByStudentDetail = ({selectedStudent, assignments, onUpdateAssignment}) => {
 
-    const filteredAssignmentsList = assignments.filter(assignment => {
-        if(assignment.name === selectedStudent) {
-            return assignment
-        }
-    }) 
+    const filteredAssignmentsList = assignments.filter(assignment => assignment.name === selectedStudent ? assignment : null)
+    //     {
+    //     if(assignment.name === selectedStudent) {
+    //         return assignment
+    //     }
+    // }) 
     
     return (
         

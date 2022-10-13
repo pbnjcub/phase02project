@@ -48,7 +48,7 @@ function Assignment({ assignment, onUpdateAssignment }) {
             </button>
         </td>
         <td>
-          {assignment.turnedIn ? happyEmoji : sadEmoji}
+          {assignment.turnedIn ? happyEmoji.unicode : sadEmoji.unicode}
         </td>
     </tr>
     
