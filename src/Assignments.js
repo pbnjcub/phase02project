@@ -1,7 +1,7 @@
 import React from 'react'
 import Assignment from './Assignment'
 
-const Assignments = ({assignments}) => {
+const Assignments = ({assignments, onUpdateAssignment}) => {
     return (
         <div>
             <h3>Missed Assignments for All</h3>
@@ -19,7 +19,7 @@ const Assignments = ({assignments}) => {
                 </thead>
                 <tbody>
                     {assignments.map(assignment => (
-                        <Assignment key={assignment.id} assignment={assignment}/>
+                        <Assignment key={assignment.id} assignment={assignment} onUpdateAssignment={onUpdateAssignment}/>
                     ))}
                 </tbody>
   

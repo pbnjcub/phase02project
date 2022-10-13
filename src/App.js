@@ -30,8 +30,18 @@ const App = () => {
         })
     }, [])        
 
-    function handleNewAssignments(updatedAssignments) {
-        setAssignments([...assignments, updatedAssignments])
+    function handleNewAssignments(newAssignments) {
+        setAssignments([...assignments, newAssignments])
+    }
+
+    function handleUpdatedAssignments(updatedAssignment) {
+        const updatedAssignmentsList = assignments.map((assignment) => {
+            if(assignment.id === updatedAssignment.id) {
+                return updatedAssignment
+            } else {
+                return assignment
+            }})
+        setAssignments(updatedAssignmentsList)
     }
 
     return (
@@ -41,7 +51,7 @@ const App = () => {
                 <Routes>
                     <Route exact path="/" element={<Home />}/>
                     <Route exact path="/assignments" element={<Assignments assignments={assignments}/>}/>
-                    <Route exact path="/byStudent" element={<ByStudent students={students} assignments={assignments} selectedStudent={selectedStudent} setSelectedStudent={setSelectedStudent} onNewAssignment={handleNewAssignments}/>}/>
+                    <Route exact path="/byStudent" element={<ByStudent students={students} assignments={assignments} selectedStudent={selectedStudent} setSelectedStudent={setSelectedStudent} onNewAssignment={handleNewAssignments} onUpdateAssignment={handleUpdatedAssignments}/>}/>
                     <Route exact path="/byStudent/:name" element={<ByStudentDetail  />}/>
                     <Route path="/assignments/new" element={<NewAssignmentForm  />}/>
                     {/* <Route exact path="/class" element={<Class />}/>

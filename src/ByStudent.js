@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import NewAssignmentForm from './NewAssignmentForm'
 import ByStudentDetail from './ByStudentDetail'
 
-const ByStudent = ({students, selectedStudent, setSelectedStudent, onNewAssignment, assignments}) => {
+const ByStudent = ({students, selectedStudent, setSelectedStudent, onNewAssignment, assignments, onUpdateAssignment}) => {
 
     const studentsList = students.map(student => <option key={student.name} value={student.name}><Link to={`/byStudent/${student.name}`}>{student.name}</Link></option>) 
     
@@ -32,7 +32,7 @@ const ByStudent = ({students, selectedStudent, setSelectedStudent, onNewAssignme
           
           </form>
             <hr/>
-            <ByStudentDetail selectedStudent={selectedStudent} assignments={assignments} />
+            <ByStudentDetail selectedStudent={selectedStudent} assignments={assignments} onUpdateAssignment={onUpdateAssignment}/>
             <br/>
             <br/>
             {<NewAssignmentForm selectedStudent={selectedStudent} assignments={assignments} onNewAssignment={onNewAssignment} />}

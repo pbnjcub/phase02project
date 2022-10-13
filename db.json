@@ -38,7 +38,7 @@
       "missingAssignment": "language of the world",
       "type": "Project Benchmark Goal",
       "reason": "I had a family event",
-      "turnedIn": false,
+      "turnedIn": true,
       "id": 4
     },
     {
@@ -48,7 +48,7 @@
       "missingAssignment": "language of the world",
       "type": "Project Benchmark Goal",
       "reason": "I had a family event",
-      "turnedIn": false,
+      "turnedIn": true,
       "id": 5
     },
     {
@@ -78,7 +78,7 @@
       "missingAssignment": "unit 4 corrections",
       "type": "Correction/Revision",
       "reason": "I did not write the hw down in my planner",
-      "turnedIn": false,
+      "turnedIn": true,
       "id": 8
     },
     {

@@ -1,24 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Assignment from './Assignment'
 
 
-const ByStudentDetail = ({selectedStudent, assignments}) => {
-    const [happyEmojis, setHappyEmojis] = useState([])
-    const [sadEmojis, setSadEmojis] = useState([])
-
-    useEffect(() => {
-        fetch("https://emojihub.herokuapp.com/api/random/group_face_positive")
-        .then(resp => resp.json())
-        .then(data => setHappyEmojis(data))
-    }, [])
-
-    useEffect(() => {
-        fetch("https://emojihub.herokuapp.com/api/random/group_face_negative")
-        .then(resp => resp.json())
-        .then(data => setSadEmojis(data))
-    }, [])
-
-    console.log(happyEmojis)
+const ByStudentDetail = ({selectedStudent, assignments, onUpdateAssignment}) => {
 
     const filteredAssignmentsList = assignments.filter(assignment => {
         if(assignment.name === selectedStudent) {
@@ -26,12 +10,6 @@ const ByStudentDetail = ({selectedStudent, assignments}) => {
         }
     }) 
     
-
-    function handleQRSubmit(e) {
-        e.preventDefault()
-        
-    }
-
     return (
         
             <table className="assignments-by-student">
@@ -47,7 +25,7 @@ const ByStudentDetail = ({selectedStudent, assignments}) => {
                 </thead>
                 <tbody>
                     {filteredAssignmentsList.map(assignment => (
-                        <Assignment key={assignment.id} assignment={assignment}/>
+                        <Assignment key={assignment.id} assignment={assignment} onUpdateAssignment={onUpdateAssignment} />
                     ))}
                 </tbody>
             </table>

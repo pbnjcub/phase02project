@@ -1,6 +1,20 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-function Assignment({ assignment }) {
+function Assignment({ assignment, onUpdateAssignment }) {
+  const [happyEmoji, setHappyEmoji] = useState([])
+  const [sadEmoji, setSadEmoji] = useState([])
+
+  useEffect(() => {
+      fetch("https://emojihub.herokuapp.com/api/random/group_face_positive")
+      .then(resp => resp.json())
+      .then(data => setHappyEmoji(data))
+  }, [])
+
+  useEffect(() => {
+      fetch("https://emojihub.herokuapp.com/api/random/group_face_negative")
+      .then(resp => resp.json())
+      .then(data => setSadEmoji(data))
+  }, [])
 
   function handleTurnIn() {
     fetch(`http://localhost:3001/assignments/${assignment.id}`, {
@@ -13,7 +27,7 @@ function Assignment({ assignment }) {
     }),
   })
     .then((r) => r.json())
-    .then((updatedAssignment) => console.log(updatedAssignment));
+    .then((updatedAssignment) => onUpdateAssignment(updatedAssignment));
   }
 
 
@@ -32,6 +46,9 @@ function Assignment({ assignment }) {
             >
                 {assignment.turnedIn ? "Completed" : "Turn In"}
             </button>
+        </td>
+        <td>
+          {assignment.turnedIn ? happyEmoji : sadEmoji}
         </td>
     </tr>
     
