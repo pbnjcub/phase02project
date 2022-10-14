@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { string } from "yargs";
 
 function Assignment({ assignment, onUpdateAssignment }) {
   const [happyEmoji, setHappyEmoji] = useState("")
@@ -8,21 +9,40 @@ function Assignment({ assignment, onUpdateAssignment }) {
       fetch("https://emojihub.herokuapp.com/api/random/group_face_positive")
       .then(resp => resp.json())
       .then(data => {
-        setHappyEmoji(data.unicode)
+        setHappyEmoji(data.unicode[0])
       })
   }, [])
 
-  console.log(happyEmoji[0])
-  const displayHappyEmoji = (happyEmoji) => happyEmoji[0].slice(2, 5)
-  // String.fromCodePoint(happyEmoji.unicode.slice(2,7)
-
+ 
+  
+ 
 
   useEffect(() => {
       fetch("https://emojihub.herokuapp.com/api/random/group_face_negative")
       .then(resp => resp.json())
-      .then(data => setSadEmoji(data.unicode))
+      .then(data => setSadEmoji(data.unicode[0]))
   }, [])
 
+  const convertPosUnicode = () => {
+    const converted = happyEmoji.split('')
+    const result = []
+    for (let i = 0; i < converted.length; i++) {
+      if (i > 1) {
+        result.push(converted[i])
+      }
+    }
+    return 0 + 'x' + result.join('')
+  }
+
+  const convertNegUnicode = () => {
+    const converted = sadEmoji.split('')
+    const result = []
+    for (let i = 2; i < converted.length; i++) {
+        result.push(converted[i])
+      }
+      return 0 + 'x' + result.join('')
+    }
+    console.log(convertNegUnicode())
 
 
   function handleTurnIn() {
@@ -56,11 +76,11 @@ function Assignment({ assignment, onUpdateAssignment }) {
                 {assignment.turnedIn ? "Completed" : "Turn In"}
             </button>
         </td>
-        <td
-          className="emoji"
-          role="img"
-        >
-          {assignment.turnedIn ? sadEmoji.unicode : sadEmoji.unicode}
+        <td>
+          <p>
+            {assignment.turnedIn ? String.fromCodePoint(convertPosUnicode()) : convertNegUnicode()}
+          </p>
+
         </td>
     </tr>
     
