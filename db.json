@@ -19,7 +19,8 @@
       "missingAssignment": "aleks assignment",
       "type": "Major Project",
       "reason": "I didn't write it down in my planner",
-      "id": 2
+      "id": 2,
+      "turnedIn": true
     },
     {
       "name": "Akula, Krishna",
@@ -58,7 +59,7 @@
       "missingAssignment": "Problem set 5",
       "type": "",
       "reason": "I had a family event",
-      "turnedIn": false,
+      "turnedIn": true,
       "id": 6
     },
     {
@@ -88,7 +89,7 @@
       "missingAssignment": "cell project research",
       "type": "",
       "reason": "I didn't understand",
-      "turnedIn": false,
+      "turnedIn": true,
       "id": 9
     },
     {
@@ -190,6 +191,16 @@
       "reason": "only wrote 2 paragraphs",
       "turnedIn": false,
       "id": 19
+    },
+    {
+      "name": "Brigham, Abigail",
+      "classTeacher": "(COLOR CLASS) Mrs. Kaufman",
+      "class": "Math",
+      "missingAssignment": "textbook p2",
+      "type": "Homework",
+      "reason": "had a busy weekend",
+      "turnedIn": false,
+      "id": 20
     }
   ],
   "students": [

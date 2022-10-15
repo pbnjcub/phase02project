@@ -6,7 +6,7 @@ import Home from './Home';
 import ByStudent from './ByStudent'
 import ByStudentDetail from './ByStudentDetail'
 import NewAssignmentForm from './NewAssignmentForm'
-import './App.css';
+import './css/materialize.min.css';
 
 
 const App = () => {
@@ -28,7 +28,12 @@ const App = () => {
             setStudents(data)
             setSelectedStudent(data[0].name)
         })
-    }, [])        
+    }, [])      
+    
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     var elems = document.querySelectorAll('select');
+    //     var instances = M.FormSelect.init(elems, options);
+    //   });
 
     function handleNewAssignments(newAssignments) {
         setAssignments([...assignments, newAssignments])
@@ -50,7 +55,7 @@ const App = () => {
                 <Navigation />
                 <Routes>
                     <Route exact path="/" element={<Home />}/>
-                    <Route exact path="/assignments" element={<Assignments assignments={assignments}/>}/>
+                    <Route exact path="/assignments" element={<Assignments assignments={assignments} onUpdateAssignment={handleUpdatedAssignments}/>}/>
                     <Route exact path="/byStudent" element={<ByStudent students={students} assignments={assignments} selectedStudent={selectedStudent} setSelectedStudent={setSelectedStudent} onNewAssignment={handleNewAssignments} onUpdateAssignment={handleUpdatedAssignments}/>}/>
                     <Route exact path="/byStudent/:name" element={<ByStudentDetail  />}/>
                     <Route path="/assignments/new" element={<NewAssignmentForm  />}/>

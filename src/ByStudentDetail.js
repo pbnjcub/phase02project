@@ -5,15 +5,9 @@ import Assignment from './Assignment'
 const ByStudentDetail = ({selectedStudent, assignments, onUpdateAssignment}) => {
 
     const filteredAssignmentsList = assignments.filter(assignment => assignment.name === selectedStudent ? assignment : null)
-    //     {
-    //     if(assignment.name === selectedStudent) {
-    //         return assignment
-    //     }
-    // }) 
     
-    return (
-        
-            <table className="assignments-by-student">
+    return ( 
+            <table className="striped">
                 <thead>
                     <tr>
                         <th>Student Name</th>

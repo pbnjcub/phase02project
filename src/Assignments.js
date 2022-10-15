@@ -1,12 +1,13 @@
 import React from 'react'
 import Assignment from './Assignment'
+import './css/materialize.min.css';
 
 const Assignments = ({assignments, onUpdateAssignment}) => {
     return (
-        <div>
-            <h3>Missed Assignments for All</h3>
+        <div style={{padding: 25}}>
+            <h5>Missed Assignments for All</h5>
             <hr/>
-            <table className="all-assignments">
+            <table className="striped">
                 <thead>
                     <tr>
                         <th>Student Name</th>

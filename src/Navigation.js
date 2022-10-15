@@ -1,53 +1,30 @@
 import React from "react";
 /* Add NavLink to import */
 import { Link } from "react-router-dom";
+import './css/materialize.min.css';
+// import { Button, Card, Row, Col } from 'react-materialize';
 
-/* Add basic styling for NavLinks */
-const linkStyles = {
-  display: "inline-block",
-  width: "50px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  background: "blue",
-  textDecoration: "none",
-  color: "white",
-};
 
 function Navigation() {
 
   return (
-    <div>
-      <Link
-        to="/"
-        exact
-        style={linkStyles}
-        activestyle={{
-          background: "darkblue",
-        }}
-      >
-        Home
-      </Link>
-      <Link 
-        to="/assignments"
-        exact
-        style={linkStyles}
-        activestyle={{
-          background: "darkblue",
-        }}
-      >
-        Assignments
-      </Link>
-      <Link 
-        to="/byStudent"
-        exact
-        style={linkStyles}
-        activestyle={{
-          background: "darkblue",
-        }}
-      >
-        By Student
-      </Link>
-    </div>
+    <nav >
+      <div className="nav-wrapper blue darken-4">
+        <Link to="/" className="brand-logo left" >HWTrckr</Link>
+        <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <li className="active">
+            <Link to="/" exact>Home</Link>
+          </li>
+          <li className="active">
+            <Link to="/assignments" exact>Assignments</Link>
+          </li>
+          <li className="active">
+            <Link to="/byStudent" exact>By Student</Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
   );
 }
 
