@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-// import { string } from "yargs";
 import './css/materialize.min.css';
 
 function Assignment({ assignment, onUpdateAssignment }) {
