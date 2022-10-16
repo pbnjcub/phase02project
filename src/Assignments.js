@@ -2,7 +2,7 @@ import React from 'react'
 import Assignment from './Assignment'
 import './css/materialize.min.css';
 
-const Assignments = ({assignments, onUpdateAssignment}) => {
+const Assignments = ({assignments, onUpdateAssignment, onDeleteAssignment}) => {
     return (
         <div style={{padding: 25}}>
             <h5>Missed Assignments for All</h5>
@@ -20,7 +20,7 @@ const Assignments = ({assignments, onUpdateAssignment}) => {
                 </thead>
                 <tbody>
                     {assignments.map(assignment => (
-                        <Assignment key={assignment.id} assignment={assignment} onUpdateAssignment={onUpdateAssignment}/>
+                        <Assignment key={assignment.id} assignment={assignment} onUpdateAssignment={onUpdateAssignment} onDeleteAssignment={onDeleteAssignment} />
                     ))}
                 </tbody>
   

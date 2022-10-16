@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import CompTurnInBtn from "./CompTurnInBtn"
+import DelBtn from "./DelBtn"
 import './css/materialize.min.css';
 
-function Assignment({ assignment, onUpdateAssignment }) {
+function Assignment({ assignment, onUpdateAssignment, onDeleteAssignment }) {
   const [happyEmoji, setHappyEmoji] = useState("")
   const [sadEmoji, setSadEmoji] = useState("")
 
@@ -55,7 +56,9 @@ function Assignment({ assignment, onUpdateAssignment }) {
         <td className="type">{assignment.type}</td>
         <td className="missing-assignment">{assignment.missingAssignment}</td>
         <td className="reason">{assignment.reason}</td>
-         <CompTurnInBtn onTurnIn={handleTurnIn} turnedIn={assignment.turnedIn} happyEmoji={happyEmoji} sadEmoji={sadEmoji}/>
+        <CompTurnInBtn onTurnIn={handleTurnIn} turnedIn={assignment.turnedIn} happyEmoji={happyEmoji} sadEmoji={sadEmoji}/>
+        <DelBtn assignment={assignment} onDeleteAssignment={onDeleteAssignment} />
+
             {/* <button style={{fontSize: 10}}
                 className="btn waves-effect waves-light blue darken-4"
                 onClick={handleTurnIn}
