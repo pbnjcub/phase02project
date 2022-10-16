@@ -42,17 +42,6 @@ function Assignment({ assignment, onUpdateAssignment }) {
     return 0 + 'x' + result.join('')
   }
 
-  // function convertNegUnicode() {
-  //   const converted = sadEmoji.split('')
-  //   const result = []
-  //   for (let i = 2; i < converted.length; i++) {
-  //       result.push(converted[i])
-  //     }
-  //     setConvertedSadEmoji(0 + 'x' + result.join(''))
-  //   }
-
-console.log(sadEmoji)
-
   function handleTurnIn() {
     fetch(`http://localhost:3001/assignments/${assignment.id}`, {
     method: "PATCH",
