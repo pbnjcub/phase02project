@@ -31,16 +31,7 @@ function Assignment({ assignment, onUpdateAssignment }) {
       })
   }, [])
 
-  const convertPosUnicode = (happyEmoji) => {
-    const converted = happyEmoji.split('')
-    const result = []
-    for (let i = 0; i < converted.length; i++) {
-      if (i > 1) {
-        result.push(converted[i])
-      }
-    }
-    return 0 + 'x' + result.join('')
-  }
+
 
   function handleTurnIn() {
     fetch(`http://localhost:3001/assignments/${assignment.id}`, {
@@ -66,7 +57,7 @@ function Assignment({ assignment, onUpdateAssignment }) {
         <td className="missing-assignment">{assignment.missingAssignment}</td>
         <td className="reason">{assignment.reason}</td>
         <td>
-            <button style={{fontSize: "small"}}
+            <button style={{fontSize: 10}}
                 className="btn waves-effect waves-light blue darken-4"
                 onClick={handleTurnIn}
             >
