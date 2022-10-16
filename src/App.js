@@ -60,8 +60,6 @@ const App = () => {
                     <Route exact path="/byStudent" element={<ByStudent students={students} assignments={assignments} selectedStudent={selectedStudent} setSelectedStudent={setSelectedStudent} onNewAssignment={handleNewAssignments} onUpdateAssignment={handleUpdatedAssignments}/>}/>
                     <Route path="/byStudent/:name" element={<ByStudentDetail  />}/>
                     <Route path="/assignments/new" element={<NewAssignmentForm  />}/>
-                    {/* <Route exact path="/class" element={<Class />}/>
-                    <Route exact path="/teacher" element={<Teacher />}/> */}
                 </Routes>
             </div>
         </Router>

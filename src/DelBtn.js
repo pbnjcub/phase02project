@@ -14,7 +14,7 @@ const DelBtn = ({onDeleteAssignment, assignment}) => {
 
     return (
         <td>
-            {assignment.turnedIn ? <i class="large material-icons" onClick={onDelete}>delete</i> : ""}
+            {assignment.turnedIn ? <i class="material-icons" onClick={onDelete}>delete</i> : ""}
         </td>
     )
 }

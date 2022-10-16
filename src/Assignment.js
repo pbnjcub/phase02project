@@ -57,15 +57,7 @@ function Assignment({ assignment, onUpdateAssignment, onDeleteAssignment }) {
         <td className="missing-assignment">{assignment.missingAssignment}</td>
         <td className="reason">{assignment.reason}</td>
         <CompTurnInBtn onTurnIn={handleTurnIn} turnedIn={assignment.turnedIn} happyEmoji={happyEmoji} sadEmoji={sadEmoji}/>
-        <DelBtn assignment={assignment} onDeleteAssignment={onDeleteAssignment} />
-
-            {/* <button style={{fontSize: 10}}
-                className="btn waves-effect waves-light blue darken-4"
-                onClick={handleTurnIn}
-            >
-                {assignment.turnedIn ? `Completed ${String.fromCodePoint(happyEmoji)}` : `Turn In ${String.fromCodePoint(sadEmoji)}`}
-            </button> */}
-        
+        <DelBtn assignment={assignment} onDeleteAssignment={onDeleteAssignment} />       
     </tr>
     
   );
