@@ -57,7 +57,8 @@ const App = () => {
                     <Route exact path="/" element={<Home />}/>
                     <Route exact path="/assignments" element={<Assignments assignments={assignments} onUpdateAssignment={handleUpdatedAssignments}/>}/>
                     <Route exact path="/byStudent" element={<ByStudent students={students} assignments={assignments} selectedStudent={selectedStudent} setSelectedStudent={setSelectedStudent} onNewAssignment={handleNewAssignments} onUpdateAssignment={handleUpdatedAssignments}/>}/>
-                    <Route exact path="/byStudent/:name" element={<ByStudentDetail  />}/>
+                    {/* <Route exact path="/assignment/delete" element={<Delete />}/> */}
+                    <Route path="/byStudent/:name" element={<ByStudentDetail  />}/>
                     <Route path="/assignments/new" element={<NewAssignmentForm  />}/>
                     {/* <Route exact path="/class" element={<Class />}/>
                     <Route exact path="/teacher" element={<Teacher />}/> */}

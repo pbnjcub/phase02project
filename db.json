@@ -201,6 +201,16 @@
       "reason": "had a busy weekend",
       "turnedIn": false,
       "id": 20
+    },
+    {
+      "name": "Appalaneni, Vaibhav",
+      "classTeacher": "(COLOR CLASS) Mr. Jung",
+      "class": "Math",
+      "missingAssignment": "How Deep is the Ocean?",
+      "type": "Major Project",
+      "reason": "I had a Bahmitsvah to go to this weekend.",
+      "turnedIn": false,
+      "id": 21
     }
   ],
   "students": [
