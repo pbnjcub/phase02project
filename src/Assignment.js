@@ -77,7 +77,7 @@ console.log(sadEmoji)
         <td className="missing-assignment">{assignment.missingAssignment}</td>
         <td className="reason">{assignment.reason}</td>
         <td>
-            <button
+            <button style={{fontSize: "small"}}
                 className="btn waves-effect waves-light blue darken-4"
                 onClick={handleTurnIn}
             >
